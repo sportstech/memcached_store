@@ -10,9 +10,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/pivotalneutron/memcached_store"
   s.summary = "ActiveSupport Cache Store for http://github.com/fauna/memcached "
   s.description = "A drop-in replacement for ActiveSupport's built-in MemCacheStore that uses the native memcached gem"
-  s.required_rubygems_version = ">= 1.7.2"
+  s.required_rubygems_version = ">= 1.5.2"
   s.files = Dir.glob("lib/**/*") + %w(memcached_store.rb MIT-LICENSE README.md)
-  s.require_path = 'lib'
+  s.require_path = '.'
   s.add_dependency 'memcached', '>= 1.2.7'
   s.add_dependency 'activesupport', '>= 3.0.5'
+  s.add_dependency 'actionpack', '>= 3.0.5'
 end

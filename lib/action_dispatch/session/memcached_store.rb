@@ -1,6 +1,6 @@
 require 'memcached'
 
-module ActionController
+module ActionDispatch
   module Session
     class MemcachedStore < AbstractStore
       def initialize(app, options = {})
@@ -38,10 +38,19 @@ module ActionController
           options = env['rack.session.options']
           expiry  = options[:expire_after] || 0
           @pool.set(sid, session_data, expiry)
-          return true
+          return sid
         rescue Memcached::Error, Errno::ECONNREFUSED
           return false
         end
+
+        def destroy(env)
+          if sid = current_session_id(env)
+            @pool.delete(sid)
+          end
+        rescue Memcached::Error, Errno::ECONNREFUSED
+          false
+        end
+
     end
   end
 end
