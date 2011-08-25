@@ -23,6 +23,10 @@ module ActionDispatch
         super
       end
 
+      def reset
+        @pool.reset
+      end
+
       private
         def get_session(env, sid)
           sid ||= generate_sid

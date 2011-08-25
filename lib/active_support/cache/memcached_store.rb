@@ -51,6 +51,10 @@ module ActiveSupport
         end
       end
 
+      def reset
+        @data.reset
+      end
+
       protected
 
       def read_entry(key, options = nil)
