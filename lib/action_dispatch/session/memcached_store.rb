@@ -38,8 +38,8 @@ module ActionDispatch
           [sid, session]
         end
 
-        def set_session(env, sid, session_data)
-          options = env['rack.session.options']
+        def set_session(env, sid, session_data, options={})
+          options = env['rack.session.options'].merge(options)
           expiry  = options[:expire_after] || 0
           @pool.set(sid, session_data, expiry)
           return sid
