@@ -36,7 +36,29 @@ See [the memcached documentation](https://github.com/evan/memcached/blob/master/
 
 ## Notes
 
-This adds the dependency load fix patch to `ActiveSupport::Cache::Store`.
+You may need to add the following development fix: (was formerly bundled in `cache-contrib` plugin):
+
+```ruby
+# config/initializers/patches/dependency_load_fix
+if ActiveSupport::Dependencies.mechanism == :load
+  module ActiveSupport
+    module Cache
+      module Patches
+        module DependencyLoadFix
+          def self.included(base)
+            super
+            base.alias_method_chain :fetch, :dependency_load_fix
+          end
+
+          def fetch_with_dependency_load_fix(*arguments)
+            block_given? ? yield : fetch_without_dependency_load_fix(*arguments)
+          end
+        end
+      end
+    end
+  end
+end
+```
 
 See [this comment](http://thewebfellas.com/blog/2008/6/9/rails-2-1-now-with-better-integrated-caching#comment-1171) for an idea of what this patch does.
 
