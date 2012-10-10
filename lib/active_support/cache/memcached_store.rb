@@ -1,3 +1,4 @@
+puts "Required"
 require 'memcached'
 
 module ActiveSupport
