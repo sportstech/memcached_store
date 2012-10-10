@@ -1,6 +1,9 @@
-# MemcachedStore
+# MemcachedStore (Rails 2 Version)
 
-Rails 2.3 ActiveSupport Cache Store for http://github.com/evan/memcached.
+[Rails 3 Version](https://github.com/sportstech/memcached_store)
+[Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
+
+*Rails 2.3.11+* ActiveSupport Cache Store for http://github.com/evan/memcached.
 
 A drop-in replacement for ActiveSupport 2.3's built-in MemCacheStore that uses the native memcached gem
 
@@ -8,15 +11,8 @@ A drop-in replacement for ActiveSupport 2.3's built-in MemCacheStore that uses t
 
 Add this line to your application's Gemfile:
 
-    gem 'memcached_store'
+    gem 'memcached_store', :git => 'git://github.com/sportstech/memcached_store.git', :branch => 'rails_2'
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install memcached_store
 
 ## Usage
 In `config/environments/<environment>.rb`, add this:
