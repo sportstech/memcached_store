@@ -38,6 +38,12 @@ In `config/environments/<environment>.rb`, add this:
 
 See [the memcached documentation](https://github.com/evan/memcached/blob/master/lib/memcached/memcached.rb) for configuration options.
 
+## Notes
+
+This adds the dependency load fix patch to `ActiveSupport::Cache::Store`.
+
+See [this comment](http://thewebfellas.com/blog/2008/6/9/rails-2-1-now-with-better-integrated-caching#comment-1171) for an idea of what this patch does.
+
 ## TODO
 
 * Write tests
