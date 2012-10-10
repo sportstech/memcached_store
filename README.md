@@ -1,15 +1,14 @@
-# ActiveSupport Memcached Cache Store
-Drop-in replacement for ActiveSupport::Cache::MemCacheStore powered by [Evan Weaver's Memcached](http://github.com/fauna/memcached)
+# ActiveSupport Memcached Cache Store (Rails 3 Version)
+Drop-in replacement for ActiveSupport::Cache::MemCacheStore powered by [Evan Weaver's Memcached](http://github.com/evan/memcached)
+ 
+[Rails 3 Version](https://github.com/sportstech/memcached_store)
+[Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
 
 ## Installation
 
 #### Using Bundler
 
     gem 'memcached_store'
-
-#### The old-skool way
-
-    gem install memcached_store
 
 ## Usage
 In `config/application.rb`, add this:
@@ -22,7 +21,7 @@ In `config/application.rb`, add this:
 
     config.cache_store = :memcached_store, ['10.0.0.1:11211', '10.0.0.2:11211']
 
-See http://github.com/fauna/memcached for configuration options.
+See http://github.com/evan/memcached for configuration options.
 
 ## TODO
 
