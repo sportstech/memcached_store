@@ -41,22 +41,17 @@ You may need to add the following development fix: (was formerly bundled in `cac
 ```ruby
 # config/initializers/patches/dependency_load_fix
 if ActiveSupport::Dependencies.mechanism == :load
-  module ActiveSupport
-    module Cache
-      module Patches
-        module DependencyLoadFix
-          def self.included(base)
-            super
-            base.alias_method_chain :fetch, :dependency_load_fix
-          end
+  module ActiveSupport::Cache
+     class Store
 
-          def fetch_with_dependency_load_fix(*arguments)
-            block_given? ? yield : fetch_without_dependency_load_fix(*arguments)
-          end
-        end
-      end
-    end
-  end
+       def fetch_with_dependency_load_fix(*arguments)
+         block_given? ? yield : fetch_without_dependency_load_fix(*arguments)
+       end
+       
+       alias_method_chain :fetch, :dependency_load_fix
+       
+     end
+   end
 end
 ```
 
