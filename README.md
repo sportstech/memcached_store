@@ -19,17 +19,24 @@ Or install it yourself as:
     $ gem install memcached_store
 
 ## Usage
-In `config/application.rb`, add this:
+In `config/environments/<environment>.rb`, add this:
 
 #### For a single memcached server
 
+    require 'memcached_store'
     config.cache_store = :memcached_store, '127.0.0.1:11211', { :namespace => "production" }
 
 #### For multiple memcached servers, you can pass an array:
 
+    require 'memcached_store'
     config.cache_store = :memcached_store, ['10.0.0.1:11211', '10.0.0.2:11211']
+    
+#### Any options:
 
-See http://github.com/evan/memcached for configuration options.
+    require 'memcached_store'
+    config.cache_store = :memcached_store, ['10.0.0.1:11211', '10.0.0.2:11211'], { :namespace => 'production', :default_ttl => 15.minutes.to_i }
+
+See [the memcached documentation](https://github.com/evan/memcached/blob/master/lib/memcached/memcached.rb) for configuration options.
 
 ## TODO
 
