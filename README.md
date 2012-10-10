@@ -1,8 +1,8 @@
 # ActiveSupport Memcached Cache Store (Rails 3 Version)
 Drop-in replacement for ActiveSupport::Cache::MemCacheStore powered by [Evan Weaver's Memcached](http://github.com/evan/memcached)
  
-[Rails 3 Version](https://github.com/sportstech/memcached_store)
-[Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
+* [Rails 3 Version](https://github.com/sportstech/memcached_store)
+* [Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
 
 ## Installation
 
