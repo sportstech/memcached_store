@@ -1,15 +1,22 @@
-# ActiveSupport Memcached Cache Store
-Drop-in replacement for ActiveSupport::Cache::MemCacheStore powered by [Evan Weaver's Memcached](http://github.com/fauna/memcached)
+# MemcachedStore
+
+Rails 2.3 ActiveSupport Cache Store for http://github.com/evan/memcached.
+
+A drop-in replacement for ActiveSupport 2.3's built-in MemCacheStore that uses the native memcached gem
 
 ## Installation
 
-#### Using Bundler
+Add this line to your application's Gemfile:
 
     gem 'memcached_store'
 
-#### The old-skool way
+And then execute:
 
-    gem install memcached_store
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install memcached_store
 
 ## Usage
 In `config/application.rb`, add this:
@@ -22,11 +29,18 @@ In `config/application.rb`, add this:
 
     config.cache_store = :memcached_store, ['10.0.0.1:11211', '10.0.0.2:11211']
 
-See http://github.com/fauna/memcached for configuration options.
+See http://github.com/evan/memcached for configuration options.
 
 ## TODO
 
 * Write tests
 * Implement multi_get
 
-Copyright (c) 2008-2011 Lourens Naudé, [Pivotal Labs](http://pivotallabs.com), [Friendster Inc.](http://friendster.com). Released under the MIT license
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request

@@ -1,19 +1,18 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
+require File.expand_path('../lib/memcached_store/version', __FILE__)
 
-Gem::Specification.new do |s|
-  s.name = "memcached_store"
-  s.version = '0.9.5'
-  s.platform = Gem::Platform::RUBY
-  s.authors = ["Lourens Naudé", "Pivotal Labs", "Friendster"]
-  s.homepage = "https://github.com/pivotalneutron/memcached_store"
-  s.summary = "ActiveSupport Cache Store for http://github.com/fauna/memcached "
-  s.description = "A drop-in replacement for ActiveSupport's built-in MemCacheStore that uses the native memcached gem"
-  s.required_rubygems_version = ">= 1.5.2"
-  s.files = Dir.glob("lib/**/*") + %w(memcached_store.rb MIT-LICENSE README.md)
-  s.require_path = '.'
-  s.add_dependency 'memcached', '>= 1.2.7'
-  s.add_dependency 'activesupport', '>= 3.0.5'
-  s.add_dependency 'actionpack', '>= 3.0.5'
+Gem::Specification.new do |gem|
+  gem.authors       = ["Quinn"]
+  gem.email         = ["chaffeqa@gmail.com"]
+  gem.description   = %q{Rails 2.3 ActiveSupport Cache Store for http://github.com/evan/memcached}
+  gem.summary       = %q{A drop-in replacement for ActiveSupport 2.3's built-in MemCacheStore that uses the native memcached gem}
+  gem.homepage      = "https://github.com/sportstech/memcached_store"
+
+  gem.files         = `git ls-files`.split($\)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.name          = "memcached_store"
+  gem.require_paths = ["lib"]
+  gem.version       = "0.0.1"
+  gem.add_dependency 'memcached'
 end
