@@ -1,7 +1,7 @@
 # MemcachedStore (Rails 2 Version)
 
-[Rails 3 Version](https://github.com/sportstech/memcached_store)
-[Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
+* [Rails 3 Version](https://github.com/sportstech/memcached_store)
+* [Rails 2 Version](https://github.com/sportstech/memcached_store/tree/rails_2)
 
 *Rails 2.3.11+* ActiveSupport Cache Store for http://github.com/evan/memcached.
 
