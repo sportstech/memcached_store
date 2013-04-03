@@ -28,4 +28,3 @@ See http://github.com/evan/memcached for configuration options.
 * Write tests
 * Implement multi_get
 
-Copyright (c) 2008-2011 Lourens Naudé, [Pivotal Labs](http://pivotallabs.com), [Friendster Inc.](http://friendster.com). Released under the MIT license
